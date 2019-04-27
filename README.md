@@ -26,6 +26,8 @@ result of the cmake command in the quickfix as well.
 
 ### Variables
 
+ * `g:cmake_executable` - The command that runs cmake. Defaults to "cmake"
+
  * `g:cmake_install_prefix` same as `-DCMAKE_INSTALL_PREFIX`
 
  * `g:cmake_build_type` same as `-DCMAKE_BUILD_TYPE`
