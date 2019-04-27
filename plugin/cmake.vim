@@ -20,6 +20,7 @@ endif
 if !exists("g:cmake_ycm_symlinks")
   let g:cmake_ycm_symlinks = 0
 endif
+let g:cmake_executable = get(g:, 'cmake_executable', 'cmake')
 
 if !executable("cmake")
   echoerr "vim-cmake requires cmake executable. Please make sure it is installed and on PATH."
@@ -105,7 +106,7 @@ function! s:cmake_configure()
 
   let l:argumentstr = join(l:argument, " ")
 
-  let s:cmd = 'cmake .. '. l:argumentstr . " " . join(a:000)
+  let s:cmd = g:cmake_executable . ' .. '. l:argumentstr . " " . join(a:000)
   echo s:cmd
   if exists(":AsyncRun")
     execute 'copen'
